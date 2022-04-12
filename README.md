@@ -10,6 +10,40 @@
 ## Tutorial link
 https://www.tutsmake.com/laravel-9-upload-image-example-tutorial/
 
+## Process to create this repository
+
+```shell
+$ composer create-project --prefer-dist laravel/laravel dwwm_2021_sprint_07_laravel_9_image
+$ cd dwwm_2021_sprint_07_laravel_9_image/
+$ git init
+$ git add . 
+$ git commit -m "First commit."
+
+# TODO manually: create the DB configure in the .env file
+
+$ php artisan make:model Image -m
+# TODO manually: adjust the generated database/migrations/*_create_photos_table.php migration file
+$ php artisan migrate
+
+# TODO manually: create route to handler image upload
+$ php artisan make:controller ImageController
+
+# TODO manually: adjust the generated app/Http/Controllers/ImageController.php controller
+
+# TODO manually: create the view image.blade.php
+
+# create the directory storage/app/public/images to store images
+$ mkdir storage/app/public/images
+
+$ php artisan serve
+
+# TODO manually: go the address http://127.0.0.1:8000/image-upload
+
+$ git add routes/web.php app/Http/Controllers/ImageController.php app/Models/Image.php database/migrations/*_create_images_table.php resources/views/image.blade.php 
+
+$ git commit -m "End of tutorial."
+```
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
